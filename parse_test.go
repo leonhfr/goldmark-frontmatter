@@ -86,7 +86,7 @@ func TestFrontmatterNode_Dump(t *testing.T) {
 	require.NoError(t, err)
 
 	src := []byte("title: Hello World")
-	node := frontmatterNode{
+	node := Node{
 		Format:  YAML,
 		Segment: text.NewSegment(0, len(src)),
 	}

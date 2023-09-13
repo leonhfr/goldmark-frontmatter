@@ -1,4 +1,4 @@
-module go.abhg.dev/goldmark/frontmatter/tools
+module github.com/leonhfr/goldmark-frontmatter/tools
 
 go 1.19
 

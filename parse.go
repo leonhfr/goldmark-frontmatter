@@ -71,7 +71,7 @@ func (p *Parser) Open(_ ast.Node, reader text.Reader, _ parser.Context) (ast.Nod
 		return nil, parser.NoChildren
 	}
 
-	return &frontmatterNode{
+	return &Node{
 		Format:     format,
 		DelimCount: delimCount,
 		Segment: text.Segment{
@@ -88,7 +88,7 @@ func (p *Parser) Open(_ ast.Node, reader text.Reader, _ parser.Context) (ast.Nod
 func (p *Parser) Continue(node ast.Node, reader text.Reader, _ parser.Context) parser.State {
 	p.init()
 
-	n := node.(*frontmatterNode)
+	n := node.(*Node)
 	line, seg := reader.PeekLine()
 
 	if delim, count := lineDelim(line); delim != 0 {
@@ -107,7 +107,7 @@ func (p *Parser) Continue(node ast.Node, reader text.Reader, _ parser.Context) p
 func (p *Parser) Close(node ast.Node, reader text.Reader, pc parser.Context) {
 	p.init()
 
-	n := node.(*frontmatterNode)
+	n := node.(*Node)
 	raw := n.Segment.Value(reader.Source())
 
 	(&Data{
@@ -135,9 +135,9 @@ func (*Parser) CanAcceptIndentedLine() bool {
 
 var _kind = ast.NewNodeKind("frontmatter")
 
-// Hidden node to store information about the parse state
+// Node stores information about the parse state
 // before the front matter is placed in the parser context.
-type frontmatterNode struct {
+type Node struct {
 	ast.BaseBlock
 
 	// Format holds the front matter format we matched.
@@ -151,16 +151,18 @@ type frontmatterNode struct {
 	Segment text.Segment
 }
 
-var _ ast.Node = (*frontmatterNode)(nil)
+var _ ast.Node = (*Node)(nil)
 
-func (n *frontmatterNode) Dump(source []byte, level int) {
+// Dump implements Node.Dump.
+func (n *Node) Dump(source []byte, level int) {
 	ast.DumpHelper(n, source, level, map[string]string{
 		"Format": n.Format.Name,
 		"Data":   string(n.Segment.Value(source)),
 	}, nil)
 }
 
-func (n *frontmatterNode) Kind() ast.NodeKind {
+// Kind implements Node.Kind.
+func (n *Node) Kind() ast.NodeKind {
 	return _kind
 }
 

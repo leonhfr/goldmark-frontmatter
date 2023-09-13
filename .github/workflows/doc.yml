@@ -39,7 +39,7 @@ jobs:
       - name: Install doc2go
         run: go install go.abhg.dev/doc2go@latest
       - name: Generate API reference
-        run: doc2go -home go.abhg.dev/goldmark/frontmatter ./...
+        run: doc2go -home github.com/leonhfr/goldmark-frontmatter ./...
       - name: Build demo website
         run: |
           make -C demo

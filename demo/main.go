@@ -8,9 +8,9 @@ import (
 	"fmt"
 	"syscall/js"
 
+	frontmatter "github.com/leonhfr/goldmark-frontmatter"
 	"github.com/yuin/goldmark"
 	"github.com/yuin/goldmark/parser"
-	"go.abhg.dev/goldmark/frontmatter"
 )
 
 func main() {

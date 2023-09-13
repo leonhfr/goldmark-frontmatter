@@ -1,6 +1,6 @@
 # goldmark-frontmatter
 
-[![Go Reference](https://pkg.go.dev/badge/go.abhg.dev/goldmark/frontmatter.svg)](https://pkg.go.dev/go.abhg.dev/goldmark/frontmatter)
+[![Go Reference](https://pkg.go.dev/badge/github.com/leonhfr/goldmark-frontmatter.svg)](https://pkg.go.dev/github.com/leonhfr/goldmark-frontmatter)
 [![CI](https://github.com/abhinav/goldmark-frontmatter/actions/workflows/ci.yml/badge.svg)](https://github.com/abhinav/goldmark-frontmatter/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/abhinav/goldmark-frontmatter/branch/main/graph/badge.svg?token=Q47RX5AA3O)](https://codecov.io/gh/abhinav/goldmark-frontmatter)
 
@@ -23,7 +23,7 @@ A web-based demonstration of the extension is available at
 ## Installation
 
 ```bash
-go get go.abhg.dev/goldmark/frontmatter@latest
+go get github.com/leonhfr/goldmark-frontmatter@latest
 ```
 
 ## Usage
@@ -31,7 +31,7 @@ go get go.abhg.dev/goldmark/frontmatter@latest
 To use goldmark-frontmatter, import the `frontmatter` package.
 
 ```go
-import "go.abhg.dev/goldmark/frontmatter"
+import "github.com/leonhfr/goldmark-frontmatter"
 ```
 
 Then include the `frontmatter.Extender` in the list of extensions

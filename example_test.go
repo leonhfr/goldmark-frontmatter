@@ -5,10 +5,10 @@ import (
 	"log"
 	"os"
 
+	"github.com/leonhfr/goldmark-frontmatter"
 	"github.com/yuin/goldmark"
 	"github.com/yuin/goldmark/parser"
 	"github.com/yuin/goldmark/text"
-	"go.abhg.dev/goldmark/frontmatter"
 )
 
 func ExampleData_Decode() {

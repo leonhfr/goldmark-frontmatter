@@ -1,12 +1,12 @@
-module go.abhg.dev/goldmark/frontmatter/demo
+module github.com/leonhfr/goldmark-frontmatter/demo
 
 go 1.20
 
-replace go.abhg.dev/goldmark/frontmatter => ../
+replace github.com/leonhfr/goldmark-frontmatter => ../
 
 require (
 	github.com/yuin/goldmark v1.5.6
-	go.abhg.dev/goldmark/frontmatter v0.1.0
+	github.com/leonhfr/goldmark-frontmatter v0.1.0
 )
 
 require (
